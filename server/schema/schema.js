@@ -1,6 +1,6 @@
 const { projects, transactions } = require('../sampleData.js')
 
-const { GraphQLObjectType, GraphQLID, GraphQLString, GraphQLSchema } = require('graphql');
+const { GraphQLObjectType, GraphQLID, GraphQLString, GraphQLSchema, GraphQLList } = require('graphql');
 
 // Client Type.  The convention is to use uppercase C in ClientType
 const ClientType = new GraphQLObjectType({
@@ -19,7 +19,13 @@ const ClientType = new GraphQLObjectType({
 const RootQuery = new GraphQLObjectType({
     name: 'RootQueryType',
     fields: {
-        client: {
+        transactions: {
+            type: new GraphQLList(ClientType),
+            resolve(parent, args) {
+                return transactions;
+            }
+        },
+        transaction: {
             type: ClientType,
             args: {id: { type: GraphQLID }},
             resolve(parent, args) {
