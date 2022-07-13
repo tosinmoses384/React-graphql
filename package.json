@@ -1,10 +1,11 @@
 {
-  "name": "TosinTest_Graphql",
+  "name": "tosintestgraphql",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server/index.js",
+    "dev": "nodemon server/index.js"
   },
   "keywords": [],
   "author": "",
@@ -22,3 +23,4 @@
     "nodemon": "^2.0.19"
   }
 }
+
