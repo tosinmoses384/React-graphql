@@ -4,6 +4,7 @@ import React from 'react'
 export default function TransactionRow({ transaction }) {
   return (
    <tr>
+    <td>{transaction.id}</td>
     <td>{transaction.name}</td>
     <td>{transaction.email}</td>
     <td>{transaction.phone}</td>
